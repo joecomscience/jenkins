@@ -1,6 +1,6 @@
 # Jenkins Docker image
 
-Jenkins Docker image with [Docker](https://docs.docker.com)  based on
+Jenkins Docker image with [Docker](https://docs.docker.com) based on
 [jenkinsci/blueocean](https://hub.docker.com/r/_/jenkinsci/)
 
 let take a look of `init.groovy.d` folder if you want to add more stop to initail pipeline, the think you need to do is create groovy script inside this folder because when jenkins boot up it will execute script inside in this folder first.
@@ -22,40 +22,41 @@ let take a look of `init.groovy.d` folder if you want to add more stop to initai
 ```
 
 some groovy scripts in order to:
-  - create Jenkins shared libraries.
-  - create default admin user.
-  - create credential such as github credentail, credentail for ssh to Jenkins slave etc.
-  - create global constant variable.
-  - disable the jenkins cli over remoting
-  - disable scripts security for the job dsl scripts
-  - enable CSRF protection.
-  - enable slave master access control.
-  - set number of executors.
-  - create initial jobs.
-  - set up Jenkins url and email.
+
+- create Jenkins shared libraries.
+- create default admin user.
+- create credential such as github credentail, credentail for ssh to Jenkins slave etc.
+- create global constant variable.
+- disable the jenkins cli over remoting
+- disable scripts security for the job dsl scripts
+- enable CSRF protection.
+- enable slave master access control.
+- set number of executors.
+- create initial jobs.
+- set up Jenkins url and email.
 
 ## Getting started
-  - rename file `.env.example` to `.env`.
-  - assign value in `.env` file.
-  - run command `Make run`.
+
+- rename file `.env.example` to `.env`.
+- assign value in `.env` file.
+- run command `Make run`.
 
 ## Parameter Description
-| Name                   | Value                                  | Description                        |
-|:-----------------------|:---------------------------------------|:-----------------------------------|
-| ADMIN_USERNAME         |                                        | Get it from keyweb `jenkins` entry |
-| ADMIN_PASSWORD         |                                        | Get it from keyweb `jenkins` entry |
-| GIT_USER               |                                        |                                    |
-| GIT_TOKEN              |                                        |                                    |
-| GIT_BASE_URL           | https://github.dev.global.tesco.org/   |                                    |
-| GIT_SHARE_LIB_REPO     | SEA-Customer/jenkins-share-libraries   |                                    |
-| GIT_CREDENTIAL_ID      | github_credential                      |                                    |
-| GIT_PIPELINE_REPO_NAME | SEA-Customer/jenkins                   |                                    |
-| AWS_ID                 |                                        |                                    |
-| AWS_ACCESS_KEY         |                                        |                                    |
-| AWS_DESCRIPTION        | tesco aws profile                      |                                    |
-| JENKINS_URL            | http://jenkins.seacust-test-domain.com |                                    |
+
+| Name                   | Value | Description                        |
+| :--------------------- | :---- | :--------------------------------- |
+| ADMIN_USERNAME         |       | Get it from keyweb `jenkins` entry |
+| ADMIN_PASSWORD         |       | Get it from keyweb `jenkins` entry |
+| GIT_USER               |       |                                    |
+| GIT_TOKEN              |       |                                    |
+| GIT_BASE_URL           |       |                                    |
+| GIT_SHARE_LIB_REPO     |       |                                    |
+| GIT_CREDENTIAL_ID      |       |                                    |
+| GIT_PIPELINE_REPO_NAME |       |                                    |
+| JENKINS_URL            |       |                                    |
 
 ## Deploy Jenkins
+
 - Remote to Jenkins server.
 - Login private docker registry using this command `eval $(aws ecr get-login --region ap-southeast-1 --no-include-email)`.
 - Run Jenkins container using below command.
@@ -73,12 +74,14 @@ docker run -d \
 ```
 
 ## Get Jenkins plugin list
+
 - Remote to Jenkins container.
 - Run command
+
 ```
   ls /usr/share/jenkins/ref/plugins/ | sed 's/.jpi//g' > plugins.txt
 ```
 
-
 #### Development
+
 - [Setup IDE](https://www.bonusbits.com/wiki/HowTo:Setup_Project_in_IntellJ_IDEA_for_Working_with_Jenkins_Plugins_Groovy_Init_Scripts)

@@ -4,9 +4,7 @@ USER root
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip zip && \
-    pip3 install --upgrade pip && \
-    pip install awscli --upgrade
+    apt-get install -y git maven
 
 COPY plugins.txt /tmp/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /tmp/plugins.txt

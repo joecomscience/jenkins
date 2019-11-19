@@ -7,8 +7,12 @@ import jenkins.model.Jenkins;
 
 def globalProperties = [
   [
-    key: "MS_WEBHOOKS_URL",
-    value: ""
+    key: "GIT_BASE_URL",
+    value: "http://host.docker.internal:8080"
+  ],
+  [
+    key: "GIT_PIPELINE_REPO",
+    value: "http://host.docker.internal:8080/root/jenkins.git"
   ]
 ].each{ item -> 
   def key   = item['key']

@@ -26,14 +26,3 @@ def userCredentials = [
   .getStore()
   .addCredentials(globalDomain, credential)
 }
-
-def awsId           = System.getenv("AWS_ID")
-def awsAccessKey    = System.getenv("AWS_ACCESS_KEY")
-def awsSecretKey    = System.getenv("AWS_SECRET_KEY")
-def awsDescription  = System.getenv("AWS_DESCRIPTION") ==  null ? 'aws credential' : System.getenv("AWS_DESCRIPTION")
-def awsCredential   = new AWSCredentialsImpl(globalScrope, awsId, awsAccessKey, awsSecretKey, awsDescription)
-
-SystemCredentialsProvider
-  .getInstance()
-  .getStore()
-  .addCredentials(globalDomain, awsCredential)

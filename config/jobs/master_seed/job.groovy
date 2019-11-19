@@ -2,7 +2,7 @@
 
 def entities = [
   [
-    name: 'tesco'
+    name: 'aycap'
   ]
 ].each { item ->
 
@@ -21,7 +21,7 @@ def entities = [
     scm {
       git {
         remote {
-          url('https://github.dev.global.tesco.org/SEA-Customer/jenkins.git')
+          url("${GIT_PIPELINE_REPO}")
           credentials('github_credential')
         }
         branch('master')

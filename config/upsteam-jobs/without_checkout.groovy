@@ -31,7 +31,7 @@ node() {
         userRemoteConfigs: [
           [
             credentialsId: 'github_credential',
-            url: 'https://github.dev.global.tesco.org/SEA-Customer/jenkins.git'
+            url: "${GIT_PIPELINE_REPO}"
           ]
         ]
       ]

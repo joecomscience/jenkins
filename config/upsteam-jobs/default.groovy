@@ -34,7 +34,7 @@ node() {
         userRemoteConfigs: [
           [
             credentialsId: 'github_credential',
-            url: 'https://github.dev.global.tesco.org/SEA-Customer/jenkins.git'
+            url: '$pipeLineRepo'
           ]
         ]
       ]
@@ -71,7 +71,7 @@ node() {
         userRemoteConfigs: [
           [
             credentialsId: 'github_credential',
-            url: 'https://github.dev.global.tesco.org/$repository' + '.git'
+            url: '$gitBaseUrl/$repository' + '.git'
           ]
         ]
       ]
@@ -79,9 +79,5 @@ node() {
   }
 
   def jf = load('$template');
-  jf.defaultPipeline(
-    '$region',
-    '$awsProfile',
-    '$applicationId',
-  );
+  jf.defaultPipeline();
 }

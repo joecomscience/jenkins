@@ -43,17 +43,17 @@ some groovy scripts in order to:
 
 ## Parameter Description
 
-| Name                   | Value | Description                        |
-| :--------------------- | :---- | :--------------------------------- |
-| ADMIN_USERNAME         |       | Get it from keyweb `jenkins` entry |
-| ADMIN_PASSWORD         |       | Get it from keyweb `jenkins` entry |
-| GIT_USER               |       |                                    |
-| GIT_TOKEN              |       |                                    |
-| GIT_BASE_URL           |       |                                    |
-| GIT_SHARE_LIB_REPO     |       |                                    |
-| GIT_CREDENTIAL_ID      |       |                                    |
-| GIT_PIPELINE_REPO_NAME |       |                                    |
-| JENKINS_URL            |       |                                    |
+| Name                   | Value             | Description                        |
+| :--------------------- | :---------------- | :--------------------------------- |
+| ADMIN_USERNAME         |                   | Get it from keyweb `jenkins` entry |
+| ADMIN_PASSWORD         |                   | Get it from keyweb `jenkins` entry |
+| GIT_USER               |                   |                                    |
+| GIT_TOKEN              |                   |                                    |
+| GIT_BASE_URL           |                   |                                    |
+| GIT_SHARE_LIB_REPO     |                   |                                    |
+| GIT_CREDENTIAL_ID      | github_credential |                                    |
+| GIT_PIPELINE_REPO_NAME |                   |                                    |
+| JENKINS_URL            |                   |                                    |
 
 ## Deploy Jenkins
 

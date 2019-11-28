@@ -14,7 +14,7 @@ import hudson.triggers.*
 println "--> initial jobs"
 println "--> clean jobs"
 def jenkins     = Jenkins.instance
-def githubUrl   = System.getenv("GIT_BASE_URL") + System.getenv("GIT_PIPELINE_REPO_NAME") + ".git"
+def githubUrl   = System.getenv("GIT_BASE_URL") + System.getenv("GIT_PIPELINE_REPO") + ".git"
 def credential  = System.getenv("GIT_CREDENTIAL_ID")
 
 jenkins

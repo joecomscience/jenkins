@@ -2,7 +2,6 @@
 import com.cloudbees.plugins.credentials.impl.*;
 import com.cloudbees.plugins.credentials.*;
 import com.cloudbees.plugins.credentials.domains.*;
-import com.cloudbees.jenkins.plugins.awscredentials.*;
 
 def globalScrope = CredentialsScope.GLOBAL
 def globalDomain = Domain.global()

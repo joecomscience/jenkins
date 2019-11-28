@@ -8,11 +8,11 @@ import jenkins.model.Jenkins;
 def globalProperties = [
   [
     key: "GIT_BASE_URL",
-    value: "http://host.docker.internal:8080"
+    value: System.getenv("GIT_BASE_URL")
   ],
   [
     key: "GIT_PIPELINE_REPO",
-    value: "http://host.docker.internal:8080/root/jenkins.git"
+    value: System.getenv("GIT_BASE_URL") + System.getenv("GIT_PIPELINE_REPO")
   ]
 ].each{ item -> 
   def key   = item['key']
